@@ -1,19 +1,25 @@
-title: Aishwary Joshi's Portfolio
-description: >-
-  Data Engineer and Business Analyst with experience in transforming data into actionable insights.
-url: "https://aishwaryjoshi.github.io"
-baseurl: ""
+import yaml
 
-# Social Links
-github_username: aishwaryjoshi
-linkedin_username: aishwary-joshi-7336b4105
+# Define the content for _config.yml
+config_data = {
+    'title': "Aishwary Joshi's Portfolio",
+    'description': "Data Engineer and Business Analyst with experience in transforming data into actionable insights.",
+    'url': "https://aishwaryjoshi.github.io",
+    'baseurl': "",
+    'github_username': 'aishwaryjoshi',
+    'linkedin_username': 'aishwary-joshi-7336b4105',
+    # Add your theme here
+    'theme': 'jekyll-theme-cayman',  # You can replace this with any other theme
+    'seo': {
+        'title': "Aishwary Joshi's Portfolio",
+        'description': "Data Engineer and Business Analyst",
+        'author': 'Aishwary Joshi',
+        'url': "https://aishwaryjoshi.github.io"
+    }
+}
 
-# Theme settings
-theme: minima
+# Write the config data to _config.yml
+with open('_config.yml', 'w') as file:
+    yaml.dump(config_data, file, default_flow_style=False)
 
-# SEO settings
-seo:
-  title: "Aishwary Joshi's Portfolio"
-  description: "Data Engineer and Business Analyst"
-  author: Aishwary Joshi
-  url: "https://aishwaryjoshi.github.io"
+print("_config.yml updated with theme 'jekyll-theme-cayman'")
